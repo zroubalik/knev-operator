@@ -132,7 +132,7 @@ func (r *ReconcileChannel) newChannel(f *faasv1alpha1.Channel) (*kneventing.Chan
 		Spec: kneventing.ChannelSpec{
 			ChannelTemplate: &kneventingduck.ChannelTemplateSpec{
 				TypeMeta: metav1.TypeMeta{
-					Kind:       "InMemory",
+					Kind:       "InMemoryChannel",
 					APIVersion: "messaging.knative.dev/v1alpha1",
 				},
 			},
