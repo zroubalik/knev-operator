@@ -14,7 +14,7 @@ import (
 	"github.com/zroubalik/knev-operator/pkg/apis"
 	"github.com/zroubalik/knev-operator/pkg/controller"
 
-	kneventing "knative.dev/eventing/pkg/apis/messaging/v1alpha1"
+	kneventing "knative.dev/eventing/pkg/apis/eventing/v1alpha1"
 	"github.com/operator-framework/operator-sdk/pkg/k8sutil"
 	kubemetrics "github.com/operator-framework/operator-sdk/pkg/kube-metrics"
 	"github.com/operator-framework/operator-sdk/pkg/leader"

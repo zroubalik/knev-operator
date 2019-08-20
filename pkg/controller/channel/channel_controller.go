@@ -3,8 +3,7 @@ package channel
 import (
 	"context"
 
-	kneventingduck "github.com/knative/eventing/pkg/apis/duck/v1alpha1"
-	kneventing "knative.dev/eventing/pkg/apis/messaging/v1alpha1"
+	kneventing "knative.dev/eventing/pkg/apis/eventing/v1alpha1"
 
 	faasv1alpha1 "github.com/zroubalik/knev-operator/pkg/apis/faas/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
@@ -124,20 +123,12 @@ func (r *ReconcileChannel) Reconcile(request reconcile.Request) (reconcile.Resul
 
 func (r *ReconcileChannel) newChannel(f *faasv1alpha1.Channel) (*kneventing.Channel, error) {
 
-
 	channel := &kneventing.Channel{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      f.Name,
 			Namespace: f.Namespace,
 		},
-		Spec: kneventing.ChannelSpec{
-			ChannelTemplate: &kneventingduck.ChannelTemplateSpec{
-				TypeMeta: metav1.TypeMeta{
-					Kind:       "InMemoryChannel",
-					APIVersion: "messaging.knative.dev/v1alpha1",
-				},
-			},
-		},
+		Spec: kneventing.ChannelSpec{},
 	}
 	if err := controllerutil.SetControllerReference(f, channel, r.scheme); err != nil {
 		return nil, err
