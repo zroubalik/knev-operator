@@ -124,6 +124,7 @@ func (r *ReconcileChannel) Reconcile(request reconcile.Request) (reconcile.Resul
 
 func (r *ReconcileChannel) newChannel(f *faasv1alpha1.Channel) (*kneventing.Channel, error) {
 
+
 	channel := &kneventing.Channel{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      f.Name,

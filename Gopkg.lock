@@ -418,6 +418,7 @@
     "pkg/apis/eventing",
     "pkg/apis/eventing/v1alpha1",
     "pkg/apis/messaging",
+    "pkg/apis/messaging/v1alpha1",
   ]
   pruneopts = "NT"
   revision = "a59dae6f326057211f43f7c2d1414a9fd821b8aa"
@@ -1223,6 +1224,7 @@
   input-imports = [
     "github.com/go-openapi/spec",
     "github.com/knative/eventing/pkg/apis/duck/v1alpha1",
+    "github.com/knative/eventing/pkg/apis/messaging/v1alpha1",
     "github.com/operator-framework/operator-sdk/pkg/k8sutil",
     "github.com/operator-framework/operator-sdk/pkg/kube-metrics",
     "github.com/operator-framework/operator-sdk/pkg/leader",
@@ -1236,7 +1238,6 @@
     "k8s.io/apimachinery/pkg/apis/meta/v1",
     "k8s.io/apimachinery/pkg/runtime",
     "k8s.io/apimachinery/pkg/runtime/schema",
-    "k8s.io/apimachinery/pkg/types",
     "k8s.io/apimachinery/pkg/util/intstr",
     "k8s.io/client-go/plugin/pkg/client/auth",
     "k8s.io/client-go/rest",
